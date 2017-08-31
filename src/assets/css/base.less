@@ -1,0 +1,559 @@
+@white: #fff;
+@indoor-bg: #fefcef;
+@dim-white: #fffdff;
+@water-white: #fbfbfb;
+@lucency-white: #f8f8f8;
+@greyish-white: #fff;
+@ghost-white: #f1f1f1;
+@gray-white: #eee;
+@milk-white: #edeeed;
+@smoke-white: #e8e8e8;
+@border-gray: #e0e0e0; // 边框颜色
+@index-gray: #c7c7cc; // 首页字段颜色
+@border-black-gray: #d4d4d4;
+@border-deep-gray: #ddd; // 另外一种边色
+@grey: #d6d6d6;
+@dark-grey: #ccc;
+@grey-border: #c9c9c9;
+@deep-grey: #adadad;
+@thin-gray: #9e9e9e;
+@light-gray: #999;
+@dim-gray: #858585;
+@gray: #666;
+@black-gray: #5f646e;
+@deep-gray: #3d4245;
+@light-black: #333;
+@dim-black: #030303;
+@black: #000;
+@light-pink: #fff3dc;
+@dim-orange: #faa51e;
+@silver-yellow: #f7c9a7;
+@light-yellow: #f4aa81;
+@deep-orange: #f19761;
+@light-orange: #f06b00;
+@orange-red: #ea5504;
+@red-black: #e95503;
+@red: #fc4b4c;
+@brown: #7e2f04;
+@red-brown: #b85600;
+@light-brown: #a6623a;
+@light-blue: #7790fe;
+@dim-blue: #5fa1e8;
+@silver-blue: #5ba6ff;
+@price-blue: #3da5fe; // 美的服务价钱颜色
+@blue: #198cfa;
+@dim-blue: #16a0fb;
+@avator-border: #a4c9fc;
+@deep-blue: #0076ff;
+@silver-green: #bce7ad;
+@light-green: #79cf5b;
+@green: #5cc953;
+@fluorescent-green: #44db5e;
+@dim-green: #04be02;
+@deep-green: #00c800;
+
+// 滴滴页面公共样式
+@color-2a3c59: #2a3c59; // 导航底色 标题文字 正文文字
+@color-2aa3eb: #2aa3eb; // 重要按钮 链接文字
+@color-ff5723: #ff5723; // 消息提醒 重要提醒
+@color-75b034: #75b034; // 操作成功 谨慎使用
+@color-faa51f: #faa51f; // 区分辅助 谨慎使用
+@color-6a707d: #6a707d; // 二级文字 段落文字 普通文字
+@color-a5acbe: #a5acbe; // 图标文字 辅助文字 提示文字
+@color-cecece: #cecece; // 失效文字 已读文字 描边颜色
+@color-e8e8e8: #e8e8e8; // 强分割线 表格边线
+@color-f2f2f2: #f2f2f2; // 弱分割线 全局底色
+@color-fafafa: #fafafa; // 列表分割线 板块分割色
+
+
+.make-col(@percent) {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 @percent;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 @percent;
+  -ms-flex: 0 0 @percent;
+  flex: 0 0 @percent;
+  max-width: @percent
+}
+
+//html,body {
+//  overflow: hidden;
+//}
+body,
+html,
+li,
+input,
+gloabl,
+h2,
+th,
+input,
+nav,
+td,
+h1,
+embed,
+blockquote,
+ol,
+xml,
+div,
+dl,
+dt,
+dd,
+ul,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+abbr,
+p,
+header,
+hgroup,
+Section,
+figure,
+section,
+nav,
+article,
+aside,
+canvas {
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+a:active{
+  opacity: 0.8;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+body {
+  margin: 0;
+  color: @black;
+  //background-color: @greyish-white;
+  box-sizing: border-box;
+}
+div {
+  box-sizing: border-box;
+}
+button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+label {
+  display: block;
+  height: 100%;
+}
+button:active {
+  box-shadow: inset 0 1px 4px rgba(0,0,0,.1);
+  opacity: .9;
+}
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  border-bottom: solid #cecece .5px;
+  font-size: 17px;
+  color: @dim-black;
+  background-color: @white;
+  box-sizing: border-box;
+  .no-user-select
+  .button {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    z-index: 100;
+    padding: 0 8px;
+    min-width: initial;
+    max-width: 40px;
+    height: 100%;
+    min-height: 31px;
+    border-radius: 2px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 44px;
+  }
+  .title {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    left: 40px;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0 5px;
+    min-width: 30px;
+    height: 43px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 45px;
+    box-sizing: border-box;
+  }
+  .icon-arrow-left {
+    width: 30px;
+  }
+  .header-right {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 14px;
+    font-style: normal;
+    color: @price-blue;
+  }
+  .icon-zuojiantou {
+    margin-left: 10px;
+    line-height: 44px;
+    font-size: 24px!important;
+    color: #030303;
+  }
+}
+.break-line {
+  white-space: initial !important;
+  word-break: break-all;
+}
+.in-line {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  width: 100%;
+
+}
+//.row + .row {
+//  margin-top: -5px;
+//  padding-top: 0
+//}
+.col {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: block;
+  width: 100%
+}
+.col-5 {
+  .make-col (5%);
+}
+.col-7 {
+  .make-col (7%);
+}
+.col-10 {
+  .make-col (10%);
+}
+.col-15 {
+  .make-col (15%);
+}
+.col-20 {
+  .make-col (20%);
+}
+.col-25 {
+  .make-col (25%);
+  float: left;
+}
+.col-30 {
+  .make-col (30%);
+}
+.col-33 {
+  .make-col (33%);
+}
+.col-35 {
+  .make-col (35%);
+}
+.col-40 {
+  .make-col (40%);
+}
+.col-45 {
+  .make-col (45%);
+}
+.col-50 {
+  .make-col (50%);
+}
+.col-55 {
+   .make-col (55%);
+ }
+.col-60 {
+  .make-col (60%);
+}
+.col-65 {
+  .make-col (65%);
+}
+.col-70 {
+  .make-col (70%);
+}
+.col-75 {
+  .make-col (75%);
+}
+.col-80 {
+  .make-col (80%);
+}
+.views {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: @white;
+}
+.has-header {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  width: 100%;
+}
+/*
+ * the following styles are auto-applied to elements with
+ * v-transition="modal" when their visiblity is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+.modal-enter,
+.modal-leave {
+  opacity: 0;
+}
+.modal-enter .modal-container,
+.modal-leave .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.nav {
+  position: fixed;
+  right: 15px;
+  bottom: 10%;
+  font-size: 38px;
+  li {
+    height: 50px;
+    opacity: .8;
+  }
+}
+
+.car-footer {
+  position: fixed;
+  z-index: 9;
+  bottom: 0 !important;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: @white;
+  .row;
+  .my-car {
+    position: relative;
+    width: 78px;
+    border-top: solid 1px @border-gray;
+    text-align: center;
+    .icon-buy-car {
+      font-size: 20px;
+    }
+    .txt {
+      position: absolute;
+      bottom: 4px;
+      width: 100%;
+      line-height: 10px;
+      font-size: 20px;
+      -webkit-transform: scale(0.5);
+      transform: scale(.5);
+    }
+    .badge {
+      position: absolute;
+      left: 58%;
+      top: 3px;
+    }
+  }
+  .add-car,
+  .buy-now {
+    line-height: 50px;
+    color: @white;
+    font-size: 17px;
+
+    text-align: center;
+    .col;
+  }
+  .add-car {
+    background-color: @dim-orange;
+  }
+  .buy-now {
+    background-color: @price-blue;
+  }
+}
+.picker-mask {
+  z-index: -1;
+  display: block;
+  top: 0;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  opacity: 0;
+  //tap-highlight-color: transparent;
+  -webkit-transition: all 0s;
+  transition: all 0s;
+  &.show {
+    opacity: 1;
+    z-index: 10;
+  }
+}
+
+
+.slider {
+  // 重写导航
+  .indicator {
+    right: 50% !important;
+    -webkit-transform: translateX(50%) !important;
+    transform: translateX(50%) !important;
+    .icon_dot {
+      width: 4px;
+      height: 4px;
+      border: solid 1px @white !important;
+      background-color: transparent !important;
+    }
+    .icon_dot.active {
+      background-color: @white !important;
+    }
+  }
+  // 重写背景
+  .img {
+    background-size: contain !important;
+  }
+  .desc {
+    display: none;
+  }
+}
+
+.no-data {
+  margin-top: 30px;
+  color: @dark-grey;
+  text-align: center;
+}
+.no-m {
+  margin: 0 !important;
+}
+.ver-center {
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.col-center {
+  align-self: center!important;
+}
+.col-end {
+  align-self: flex-end!important;
+}
+.col-start {
+  align-self: flex-start!important;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+*+html .clearfix {
+  min-height: 1px;
+}
+
+input:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+
+/* IOS，input出现阴影 */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none !important; /* 清楚ios阴影 */
+  -moz-appearance: none !important; /* mobile firefox too! */
+}
+/* input为number时，在机子上显示上下箭头，去掉*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+}
+.view {
+  // transition: all .5s ease;
+}
+.test-enter, .test-leave {
+  opacity: 0;
+  // transform: translate3d(0, 0, 0);
+}
+.v-link-active {
+  color: red;
+}
+[v-cloak] {
+  display: none;
+}
+.button-clear {
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+  padding: 0 6px;
+  max-height: 42px;
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.hide {
+  opacity: 0;
+}

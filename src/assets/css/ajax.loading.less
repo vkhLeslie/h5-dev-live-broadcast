@@ -1,0 +1,179 @@
+.dagger-loading-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 20px;
+    [data-dpr] & {
+        width: 1rem;
+        height: 1rem;
+        margin-left: -.5rem;
+        margin-top: -.5rem;
+        border-radius: .2rem;
+    }
+    #dagger-loading {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        width: 40%;
+        height: 40%;
+        #circle-back-face {
+            // TODO: 在这里可以改变背景圈圈的颜色
+            // stroke: #fff;
+        }
+        #circle-front-face {
+            stroke-dasharray: 125;
+            stroke-dashoffset: -155;
+            // TODO: 这里可以改变前景圈圈的颜色
+            stroke: #fff;
+            -webkit-animation: loading-rotate 1s linear infinite;
+            animation: loading-rotate 1s linear infinite;
+            -webkit-transform-origin: center;
+            transform-origin: center;
+        }
+        #result-success {
+            path {
+                // TODO: 这里可以改变√的颜色
+                stroke: #484848;
+                stroke-dasharray: 35;
+                stroke-dashoffset: 35;
+            }
+        }
+        #result-failure {
+            path {
+                // TODO: 这里可以改变×的颜色
+                stroke: #484848;
+                stroke-dasharray: 32;
+                stroke-dashoffset: 32;
+            }
+        }
+        &.success {
+            #circle-front-face {
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                -webkit-animation: dash .5s linear;
+                animation: dash .5s linear;
+                -webkit-animation-fill-mode: forwards !important;
+                animation-fill-mode: forwards !important;
+            }
+            #result-success {
+                path {
+                    stroke: #fff;
+                    -webkit-animation: dash-0 .5s linear;
+                    animation: dash-0 .5s linear;
+                    -webkit-animation-fill-mode: forwards;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+        &.failure {
+            #circle-front-face {
+                // TODO: 这里可以改变前景圈圈在×状态时的颜色
+                //stroke: #FC4B4C;
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                -webkit-animation: dash .5s linear;
+                animation: dash .5s linear;
+                -webkit-animation-fill-mode: forwards !important;
+                animation-fill-mode: forwards !important;
+            }
+            #result-failure {
+                path {
+                    stroke: #fff;
+                    -webkit-animation: dash-0 .5s linear;
+                    animation: dash-0 .5s linear;
+                    -webkit-animation-fill-mode: forwards;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+    }
+    &.ng-leave {
+        -webkit-animation: fadeOut .3s;
+        animation: fadeOut .3s;
+    }
+    .status-group {
+        position: relative;
+        height: 16px;
+        margin-top: 70%;
+        text-align: center;
+        color: #fff;
+        //overflow: hidden;
+        [data-dpr='2'] & {
+            height: 28px;
+        }
+        [data-dpr='3'] & {
+            height: 42px;
+        }
+        p {
+            height: 14px;
+            line-height: 14px;
+            font-size: 14px;
+            margin-bottom: 0 !important;
+            [data-dpr='2'] & {
+                height: 28px;
+                line-height: 28px;
+                font-size: 28px;
+            }
+            [data-dpr='3'] & {
+                height: 42px;
+                line-height: 42px;
+                font-size: 42px;
+            }
+            -webkit-transform: translate3d(1px, 1px, 1px);
+            transform: translate3d(1px, 1px, 1px);
+        }
+        &.complete {
+            margin-top: 85%;
+        }
+        &.complete p {
+            -webkit-animation: move-up .2s linear;
+            animation: move-up .2s linear;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+@-webkit-keyframes loading-rotate {
+    from { -webkit-transform: rotate(-90deg);   transform: rotate(-90deg); }
+    to   { -webkit-transform: rotate(270deg); transform: rotate(270deg); }
+}
+@keyframes loading-rotate {
+    from { transform: rotate(-90deg); }
+    to   { transform: rotate(270deg); }
+}
+@-webkit-keyframes dash {
+    0% { stroke-dasharray: 125; stroke-dashoffset: -155; }
+    99% { stroke-dasharray: 125; stroke-dashoffset: -250; }
+    100% {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes dash {
+    0% { stroke-dasharray: 125; stroke-dashoffset: -155; }
+    99% { stroke-dasharray: 125; stroke-dashoffset: -250; }
+    100% {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes dash-0 {
+    to { stroke-dashoffset: 0; }
+}
+@keyframes dash-0 {
+    to { stroke-dashoffset: 0; }
+}
+@-webkit-keyframes move-up {
+    from { -webkit-transform: translate3d(0, 0, 0);   transform: translate3d(0, 0, 0); }
+    to   { -webkit-transform: translate3d(0, -99%, 0); transform: translate3d(0, -99%, 0); }
+}
+@keyframes move-up {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(0, -99%, 0); }
+}

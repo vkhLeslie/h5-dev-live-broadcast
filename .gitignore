@@ -1,0 +1,9 @@
+/.idea
+/node_modules
+/dist
+/.git
+/.vscode
+/local-data
+/*.zip
+/CubeModule.json
+eslintReport.html
